@@ -1,188 +1,164 @@
-
+<!-- Código completo actualizado -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Calculadora de Ahorro | Ximpler.App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f9fafb;
-            padding: 40px;
-        }
-        .container {
-            background: #ffffff;
-            padding: 30px;
-            max-width: 760px;
-            margin: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.07);
-            border: 1px solid #e0e0e0;
-        }
-        h2 {
-            text-align: center;
-            color: #1e1e1e;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        label {
-            display: block;
-            margin: 15px 0 5px;
-            color: #333;
-            font-weight: 600;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            font-size: 19px;
-        }
-        .help-text {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        button {
-            background: #00b894;
-            color: white;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 24px;
-            font-weight: 600;
-        }
-        button:hover {
-            background: #019875;
-        }
-        .result {
-            margin-top: 25px;
-            font-size: 24px;
-            color: #2d3436;
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 12px;
-        }
-        .mensaje-final {
-            margin-top: 40px;
-            background: #e8f5e9;
-            border-left: 5px solid #00b894;
-            padding: 20px;
-            border-radius: 12px;
-            color: #2e7d32;
-            font-size: 19px;
-        }
-        .mensaje-final h3 {
-            margin-top: 0;
-        }
-        .estudios {
-            margin-top: 25px;
-            font-size: 16px;
-            color: #444;
-            background: #fdfdfd;
-            padding: 15px;
-            border-left: 4px solid #ccc;
-            border-radius: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Calculadora de Ahorro | Ximpler.App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      padding: 40px;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      max-width: 760px;
+      margin: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+      border: 1px solid #e0e0e0;
+    }
+    h2 {
+      text-align: center;
+      color: #1e1e1e;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      color: #333;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 19px;
+    }
+    .help-text {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    button {
+      background: #00b894;
+      color: white;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    button:hover {
+      background: #019875;
+    }
+    .result {
+      margin-top: 25px;
+      font-size: 24px;
+      color: #2d3436;
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 12px;
+    }
+    .mensaje-final {
+      margin-top: 40px;
+      background: #e8f5e9;
+      border-left: 5px solid #00b894;
+      padding: 20px;
+      border-radius: 12px;
+      color: #2e7d32;
+      font-size: 19px;
+    }
+    .mensaje-final h3 {
+      margin-top: 0;
+    }
+    .estudios {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #444;
+      background: #fdfdfd;
+      padding: 15px;
+      border-left: 4px solid #ccc;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Calculadora de Ahorro<br>con Ximpler.App</h2>
-
-        <label for="empleados"><span style="font-size: 18px;">Número de Personal Staff y Ejecutivo (con computadora o escritorio - No operadores de calle):</span></label>
-        <input style="font-size: 18px;" type="number" id="empleados" min="1" value="20">
-
-        <label for="tiempo"><span style="font-size: 18px;">Tiempo monetizable a recuperar (%):</span></label>
-        <select style="font-size: 18px;" id="tiempo">
-            <option value="15">15% - Procesos y funciones con posibilidades de mejora para hacerlos más prácticos y eficientes</option>
-            <option value="20" selected>20% - Oportunidad de mejora en la ejecución, gestión y seguimiento entre colaboradores</option>
-            <option value="25">25% - Desorganización operativa, y fallos en la colaboración y comunicación interna</option>
-            <option value="30">30% - Procesos sustantivos de alto impacto o más importantes sin control</option>
-            <option value="35">35% - Fallos de comunicación entre dirección, mandos medios y operación, para ejecutar estrategias</option>
-        </select>
-        <div class="help-text">* Basado en estudios de McKinsey, Gallup y Harvard Business Review: entre 25% y 40% del tiempo laboral se pierde en reuniones improductivas, tareas duplicadas y falta de seguimiento.</div>
-
-        <label for="sueldo"><span style="font-size: 18px;">Sueldo mensual promedio por empleado (MXN):</span></label>
-        <input style="font-size: 18px;" type="text" id="sueldo" value="15,000" oninput="formatInput(this)">
-
-        <label for="sueldo_total"><span style="font-size: 18px;">O ingrese el sueldo total mensual de todos los empleados (MXN):</span></label>
-        <input style="font-size: 18px;" type="text" id="sueldo_total" placeholder="Opcional" oninput="formatInput(this)">
-
-        <button style="font-size: 18px;" onclick="calcular()">Calcular Ahorro</button>
-
-        
-        <div class="result" id="resultado"></div>
-
-        <div style="margin-top: 10px;">
-            <span onclick="toggleInfo()" style="cursor:pointer; font-size: 24px; color: #00b894;">
-                ℹ️ ¿Cómo se calculan los puestos optimizables?
-            </span>
-            <div id="infoBox" style="display:none; margin-top: 10px; font-size: 24px; background: #f1f5f9; padding: 12px; border-radius: 10px;">
-                <strong>Fórmula:</strong><br>
-                <em>Personal optimizable = Número de Empleados × % de Tiempo Recuperado</em><br><br>
-                Esto representa la cantidad equivalente de personas que están actualmente subutilizadas en la operación. Aunque no necesariamente implica despido, sino que existe una oportunidad real de reorganizar, reasignar funciones, pero sí, incluso reducir el tamaño del equipo sin afectar los resultados, gracias a una mejor gestión del tiempo y reacomodo de la carga de trabajo.
-            </div>
-        </div>
-    
-
-        
-        <div class="estudios" style="text-align: center; margin-top: 30px;">
-            <a href="XIMPLER Simplifica el Tiempo 2025.pdf" download
-                style="background-color: #2e3d32; color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-size: 1.1rem; display: inline-block;">
-                Ir a la Solución
-            </a>
-        </div>
-    
+  <div class="container">
+    <h2>Calculadora de Ahorro<br>con Ximpler.App</h2>
+    <label for="empleados"><span style="font-size: 18px;">Número de Personal Staff y Ejecutivo en Tu Empresa (con computadora o escritorio - No operadores de calle):</span></label>
+    <input style="font-size: 18px;" type="number" id="empleados" min="1" value="20">
+    <label for="tiempo"><span style="font-size: 18px;">Selecciona el Estatus Actual de Tu Empresa (En % de Tiempos Muertos):</span></label>
+    <select style="font-size: 18px;" id="tiempo">
+      <option value="15">15% - Procesos y funciones con posibilidades de mejora para hacerlos más prácticos y eficientes</option>
+      <option value="20" selected>20% - Oportunidad de mejora en la ejecución, gestión y seguimiento entre colaboradores</option>
+      <option value="25">25% - Desorganización operativa, y fallos en la colaboración y comunicación interna</option>
+      <option value="30">30% - Procesos sustantivos de alto impacto o más importantes sin control</option>
+      <option value="35">35% - Fallos de comunicación entre dirección, mandos medios y operación, para ejecutar estrategias</option>
+    </select>
+    <div class="help-text">* Basado en estudios de McKinsey, Gallup y Harvard Business Review: entre 25% y 40% del tiempo laboral se pierde en reuniones improductivas, tareas duplicadas y falta de seguimiento.</div>
+    <label for="sueldo"><span style="font-size: 18px;">Sueldo mensual promedio por empleado (MXN):</span></label>
+    <input style="font-size: 18px;" type="text" id="sueldo" value="15,000" oninput="formatInput(this)">
+    <label for="sueldo_total"><span style="font-size: 18px;">O ingrese el sueldo total mensual de todos los empleados staff (MXN):</span></label>
+    <input style="font-size: 18px;" type="text" id="sueldo_total" placeholder="Opcional" oninput="formatInput(this)">
+    <button style="font-size: 18px;" onclick="calcular()">Calcular Ahorro</button>
+    <div class="result" id="resultado"></div>
+    <div style="margin-top: 10px;">
+      <span onclick="toggleInfo()" style="cursor:pointer; font-size: 24px; color: #00b894;">
+        ℹ️ ¿Cómo se calculan los puestos optimizables?
+      </span>
+      <div id="infoBox" style="display:none; margin-top: 10px; font-size: 24px; background: #f1f5f9; padding: 12px; border-radius: 10px;">
+        <strong>Fórmula:</strong><br>
+        <em>Personal optimizable = Número de Empleados × % de Tiempo Recuperado</em><br><br>
+        Esto representa la cantidad equivalente de personas que están actualmente subutilizadas en la operación. Aunque no necesariamente implica despido, sino que existe una oportunidad real de reorganizar, reasignar funciones, pero sí, incluso reducir el tamaño del equipo sin afectar los resultados, gracias a una mejor gestión del tiempo y reacomodo de la carga de trabajo.
+      </div>
     </div>
-
-    <script>
-        function formatInput(input) {
-            let value = input.value.replace(/,/g, '').replace(/[^0-9]/g, '');
-            input.value = Number(value || 0).toLocaleString('es-MX');
-        }
-
-        function parseCurrency(value) {
-            return parseInt(value.replace(/[^0-9]/g, '')) || 0;
-        }
-
-        function calcular() {
-            const empleados = parseInt(document.getElementById('empleados').value);
-            const tiempo = parseInt(document.getElementById('tiempo').value) / 100;
-            const sueldo = parseCurrency(document.getElementById('sueldo').value);
-            const sueldo_total_input = document.getElementById('sueldo_total').value;
-            const sueldo_total = sueldo_total_input ? parseCurrency(sueldo_total_input) : (empleados * sueldo);
-
-            const personalOptimizable = Math.round(empleados * tiempo);
-            const ahorroMensual_por_reduccion = personalOptimizable * sueldo;
-            const ahorroAnual_por_reduccion = ahorroMensual_por_reduccion * 12;
-
-            const ahorroMensual_por_tiempo = Math.round(sueldo_total * tiempo);
-            const ahorroAnual_por_tiempo = ahorroMensual_por_tiempo * 12;
-
-            const resultado = `
-                <strong>Personal optimizable:</strong> ${personalOptimizable}<br><br>
-                <u>Ahorro por Optimización de la Capacidad Laboral Instalada (ajuste posible de personal, logrando atender los procesos actuales con mayor eficiencia sin sobrecargar al resto):</u><br>
-                - Ahorro mensual estimado: $${ahorroMensual_por_reduccion.toLocaleString()} MXN<br>
-                - Ahorro anual estimado: $${ahorroAnual_por_reduccion.toLocaleString()} MXN<br><br>
-                <u>Ahorro por mejor aprovechamiento del tiempo (involucramiento e información más rápido, menos tiempos muertos, más resultados entre el personal, ventas, cobranza efectiva, calidad de procesos, etc.):</u><br>
-                - Ahorro mensual estimado: $${ahorroMensual_por_tiempo.toLocaleString()} MXN<br>
-                - Ahorro anual estimado: $${ahorroAnual_por_tiempo.toLocaleString()} MXN
-            `;
-
-            document.getElementById('resultado').innerHTML = resultado;
-        }
-    
-        function toggleInfo() {
-            const infoBox = document.getElementById("infoBox");
-            infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
-        }
-    </script>
-    
+    <div class="estudios" style="text-align: center; margin-top: 30px;">
+      <a href="XIMPLER Simplifica el Tiempo 2025.pdf" download
+        style="background-color: #2e3d32; color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-size: 1.1rem; display: inline-block;">
+        Ir a la Solución
+      </a>
+    </div>
+  </div>
+  <script>
+    function formatInput(input) {
+      let value = input.value.replace(/,/g, '').replace(/[^0-9]/g, '');
+      input.value = Number(value || 0).toLocaleString('es-MX');
+    }
+    function parseCurrency(value) {
+      return parseInt(value.replace(/[^0-9]/g, '')) || 0;
+    }
+    function calcular() {
+      const empleados = parseInt(document.getElementById('empleados').value);
+      const tiempo = parseInt(document.getElementById('tiempo').value) / 100;
+      const sueldo = parseCurrency(document.getElementById('sueldo').value);
+      const sueldo_total_input = document.getElementById('sueldo_total').value;
+      const sueldo_total = sueldo_total_input ? parseCurrency(sueldo_total_input) : (empleados * sueldo);
+      const personalOptimizable = Math.round(empleados * tiempo);
+      const ahorroMensual_por_reduccion = personalOptimizable * sueldo;
+      const ahorroAnual_por_reduccion = ahorroMensual_por_reduccion * 12;
+      const ahorroMensual_por_tiempo = Math.round(sueldo_total * tiempo);
+      const ahorroAnual_por_tiempo = ahorroMensual_por_tiempo * 12;
+      const resultado = `
+        <strong>Personal optimizable:</strong> ${personalOptimizable}<br><br>
+        Recuperación por Optimización de la Capacidad Laboral Instalada (logrando atender los procesos actuales con solo un 70% de ajuste y mayor eficiencia sin sobrecargar al personal):<br>
+        - Estimado de Recuperación y Monetización de Resultados por Aprovechamiento de Nómina, Mensual: $${ahorroMensual_por_tiempo.toLocaleString()} MXN<br>
+        - Estimado de Recuperación y Monetización de Resultados por Aprovechamiento de Nómina, Anual: $${ahorroAnual_por_tiempo.toLocaleString()} MXN
+      `;
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+    function toggleInfo() {
+      const infoBox = document.getElementById("infoBox");
+      infoBox.style.display = infoBox.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </body>
 </html>
