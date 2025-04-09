@@ -143,14 +143,15 @@
       const sueldo_total_input = document.getElementById('sueldo_total').value;
       const sueldo_total = sueldo_total_input ? parseCurrency(sueldo_total_input) : (empleados * sueldo);
       const personalOptimizable = Math.round(empleados * tiempo);
-      const ahorroMensual_por_reduccion = personalOptimizable * sueldo;
-      const ahorroAnual_por_reduccion = ahorroMensual_por_reduccion * 12;
       const ahorroMensual_por_tiempo = Math.round(sueldo_total * tiempo);
-      const ahorroAnual_por_tiempo = ahorroMensual_por_tiempo * 12;
+      const ahorroMensual_por_tiempo_ajustado = Math.round(sueldo_total * tiempo * 0.7);
+      const ahorroAnual_por_tiempo = ahorroMensual_por_tiempo_ajustado * 12;
       const resultado = `
-        <strong>Personal optimizable:</strong> ${personalOptimizable}<br><br>
-        Recuperación por Optimización de la Capacidad Laboral Instalada (logrando atender los procesos actuales con solo un 70% de ajuste y mayor eficiencia sin sobrecargar al personal):<br>
-        - Estimado de Recuperación y Monetización de Resultados por Aprovechamiento de Nómina, Mensual: $${ahorroMensual_por_tiempo.toLocaleString()} MXN<br>
+        <strong>Personal optimizable:</strong> ${personalOptimizable}<br>
+        Nómina Muerta Mensual Actual Promedio: $${ahorroMensual_por_tiempo.toLocaleString()} MXN<br>
+        Nómina Muerta Anual Actual Promedio: $${(ahorroMensual_por_tiempo * 12).toLocaleString()} MXN<br><br>
+        <strong>Recuperación por Optimización de la Capacidad Laboral Instalada</strong> (logrando atender los procesos actuales con solo un 70% de ajuste y mayor eficiencia sin sobrecargar al personal):<br><br>
+        - Estimado de Recuperación y Monetización de Resultados por Aprovechamiento de Nómina, Mensual: $${ahorroMensual_por_tiempo_ajustado.toLocaleString()} MXN<br><br>
         - Estimado de Recuperación y Monetización de Resultados por Aprovechamiento de Nómina, Anual: $${ahorroAnual_por_tiempo.toLocaleString()} MXN
       `;
       document.getElementById('resultado').innerHTML = resultado;
